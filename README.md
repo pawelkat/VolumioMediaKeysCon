@@ -2,6 +2,7 @@ VolumioMediaKeysCon
 ===================
 
 Control Volumio with Media Keys of your Keyboard
+
 AutoHotkey script to control Volumio via http.
 
 The script allows to control your remote Volumio audio player with your PC's (Windows) keyboard shortcuts.
@@ -13,8 +14,8 @@ Features:
 
 Dependecies:
 ------------
-JSON.ahk (https://github.com/cocobelgica/AutoHotkey-JSON/blob/master/JSON.ahk)
-HTTPRequest.ahk (http://pastebin.com/5qVVuDxA)
+* JSON.ahk (https://github.com/cocobelgica/AutoHotkey-JSON/blob/master/JSON.ahk)
+* HTTPRequest.ahk (http://pastebin.com/5qVVuDxA)
 
 How to make your remote control running:
 ----------------------------------------
