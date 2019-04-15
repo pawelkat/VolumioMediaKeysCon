@@ -7,7 +7,7 @@
 #include httprequest.ahk
 #include JSON.ahk
 
-global URL := "http://volumio.local/api/v1/commands/"
+global URL := "http://myvolumio.local/api/v1/commands/"
 
 CustomColor = EEAA99  ; Can be any RGB color (it will be made transparent below).
 Gui +LastFound +AlwaysOnTop -Caption +ToolWindow  ; +ToolWindow avoids a taskbar button and an alt-tab menu item.
