@@ -7,7 +7,7 @@
 #include httprequest.ahk
 #include JSON.ahk
 
-global URL := "http://volumio.local/"
+global URL := "http://myvolumio.local/api/v1/commands/"
 
 CustomColor = EEAA99  ; Can be any RGB color (it will be made transparent below).
 Gui +LastFound +AlwaysOnTop -Caption +ToolWindow  ; +ToolWindow avoids a taskbar button and an alt-tab menu item.
@@ -31,27 +31,21 @@ RemoveWindow:
 	Gui, Hide
 
 Media_Play_Pause::
-HTTPRequest(URL . "command/?cmd=pause")
+HTTPRequest(URL . "?cmd=toggle")
 return
 
 Media_Next::
-HTTPRequest(URL . "command/?cmd=next")
+HTTPRequest(URL . "?cmd=next")
 return
 
 Media_Prev::
-HTTPRequest(URL . "command/?cmd=previous")
+HTTPRequest(URL . "?cmd=prev")
 return
 
 Volume_Down::
-	HTTPRequest(URL . "_player_engine.php?state", InOutData := "",, "Charset=utf-8")
-	j := JSON.parse(InOutData)
-	newVolume := j.volume - 2
-	HTTPRequest(URL . "/command/?cmd=setvol%20" . newVolume)
+    HTTPRequest(URL . "?cmd=volume&volume=minus")
 return
 
 Volume_Up::
-	HTTPRequest(URL . "_player_engine.php?state", InOutData := "",, "Charset=utf-8")
-	j := JSON.parse(InOutData)
-	newVolume := j.volume + 2
-	HTTPRequest(URL . "/command/?cmd=setvol%20" . newVolume)
+    HTTPRequest(URL . "?cmd=volume&volume=plus")
 return
